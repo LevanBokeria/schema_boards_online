@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+	<title>Post practice</title>
+	<script src="jspsych-6.3.1/jspsych.js"></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-instructions.js'></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-html-slider-response.js'></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-html-button-response.js'></script>
+	<script src="jatos.js"></script>
+	<link rel="stylesheet" href="jspsych-6.3.1/css/jspsych.css" type="text/css">
+	</link>
+	<link rel="stylesheet" href="./extra_files/schema_online.css" type="text/css">
+	</link>
+</head>
+
+<body>
+	<script>
+
+		//start timeline
+		jatos.onLoad(function () {
+			// debugger
+			let comp_to_start = []
+
+			//make a timeline
+			let timeline = [];
+
+			let instructions_text = []
+
+			let second_button_text = []
+
+			// So we've finished practice part 2 
+			instructions_text =
+				'<p><b>Important:</b>' +
+				'<br>' +
+				'If you did not see the full board, including the feedback text which told you if you were correct or incorrect on each trial, please go fullscreen by pressing F11 (Windows) or Control+Command+F (Mac).' + 
+				'<br><br>' + 
+				'If already in fullscreen, try zooming out your display by pressing Ctrl+minus on Windows, or Command+minus on Mac.' + 
+				' <br><br> ' + 
+				'Then, please re-do the practice trials to make sure you now see everything. It is important that you see all the components of the experiment on your screen without having to scroll.' +
+				'<br><br>Otherwise, please continue to the main experiment!</p>'
+
+			second_button_text = 'Continue'
+
+			// Give a choice to redo practice trials
+			var instructions = {
+				type: 'html-button-response',
+				stimulus: instructions_text,
+				choices: ['Repeat instructions and practice trials', second_button_text],
+				data: { test_part: 'post_practice' }
+			};
+
+			timeline.push(instructions);
+
+			jsPsych.init({
+
+				timeline: timeline,
+
+				on_finish: function (data) {
+					// debugger
+					var results = jsPsych.data.get().values()
+
+					jatos.studySessionData.outputData.instructions_results.post_practice.push(results)
+
+					if (results[0].response == 0) {
+						comp_to_start = jatos.studySessionData.inputData.component_positions.instructions_1
+
+						// Reset the block counter
+						jatos.studySessionData.inputData.curr_block = 0
+					} else {
+						comp_to_start = jatos.studySessionData.inputData.component_positions.instructions_2
+					}
+
+					// Make JATOS remember that this block was run
+					jatos.studySessionData.latestFinishedComponentId = jatos.componentId;
+					jatos.studySessionData.latestFinishedComponentPos = jatos.componentPos;
+					jatos.studySessionData.latestFinishedComponentTitle = jatos.componentProperties.title;
+
+					jatos.submitResultData('[post_practice_start_' + '---' +
+						JSON.stringify(results) +
+						'---' + '_post_practice_end]',
+						function () { jatos.startComponentByPos(comp_to_start) });
+
+					// jsPsych.data.displayData();
+				}
+			});
+
+		});
+
+
+	</script>
+</body>
+
+</html>

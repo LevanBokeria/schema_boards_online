@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+	<title>Transition</title>
+	<script src="jspsych-6.3.1/jspsych.js"></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-instructions.js'></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-survey-text.js'></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-html-slider-response.js'></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-html-button-response.js'></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-preload.js'></script>
+	<script src='./extra_functions/board_creator.js'></script>
+	<script src="jatos.js"></script>
+	<link rel="stylesheet" href="jspsych-6.3.1/css/jspsych.css" type="text/css">
+	</link>
+	<link rel="stylesheet" href="./extra_files/schema_online.css" type="text/css">
+	</link>
+</head>
+
+<body>
+	<script>
+
+		//start timeline
+		jatos.onLoad(function () {
+			// debugger
+			let comp_to_start = []
+			let ask_questions = true
+
+			//make a timeline
+			let timeline = [];
+
+			let instructions_text = []
+			let page_title = []
+			let test_part = []
+
+			let curr_block = jatos.studySessionData.inputData.curr_block
+
+			if (curr_block < jatos.studySessionData.inputData.all_blocks.length) {
+
+				// So only define these if you haven't finished the experiment.
+
+				var previous_condition = jatos.studySessionData.inputData.all_blocks[curr_block - 1][0].condition
+				var next_condition = jatos.studySessionData.inputData.all_blocks[curr_block][0].condition
+
+				var curr_trial = jatos.studySessionData.inputData.all_blocks[curr_block][0]
+
+				// Create the board element if we need it later
+				var grid_border = board_creator(
+					300,
+					jatos.studySessionData.inputData.n_rows,
+					jatos.studySessionData.inputData.n_cols,
+					false,
+					false,
+					curr_trial
+				)
+
+				// Remove certain styles:
+				grid_border.children[0].style.removeProperty('transform')
+				grid_border.children[0].style.removeProperty('top')
+				grid_border.children[0].style.removeProperty('left')
+				grid_border.children[0].style.position = 'relative'
+				grid_border.children[0].style.margin = 'auto'
+
+				// Create a flexbox with the hidden pictures
+				var flex_hidden_pics_el = document.createElement('div')
+
+				flex_hidden_pics_el.display = 'flex'
+
+				for (iPA = 0; iPA < curr_trial[curr_trial.stage.concat('_all_imgs')].length; iPA++) {
+
+					let nPA = document.createElement('img')
+
+					nPA.src = curr_trial[curr_trial.stage.concat('_all_imgs')][iPA]
+					nPA.className = 'transitionPA'
+
+					flex_hidden_pics_el.appendChild(nPA)
+				}
+			}
+
+			//////////////////////////////////////////////////////////////
+			//////////////////////////////////////////////////////////////			
+
+			// Ask if they experienced any usses:
+			var any_issues_preamble = [
+				'<div class= "header">' +
+				'<h1>Any issues?</h1>' +
+				'</div>',
+			]
+
+			var any_issues_question = {
+				type: 'survey-text',
+				questions: [
+					{ prompt: 'In the previous session, did you see the full board? Did you see the feedback text below the board telling you whether you were correct or incorrect? <br>Did you encounter any technical difficulties, such as cut off text or images, slow loading of images, or anything else? <br>Leave blank if everything was ok. Thanks!', rows: 6, columns: 50, required: false }
+				],
+				preamble: any_issues_preamble,
+				button_label_next: '<span style="color: black"d;> <strong> Next </stong></span>',
+				data: { test_part: 'any_issues' }
+			}
+
+			timeline.push(any_issues_question);
+
+			// Preload
+			var preload = {
+				type: 'preload',
+				images: [
+					...jatos.studySessionData.inputData.all_images.practice,
+					...jatos.studySessionData.inputData.all_images.cond1,
+					...jatos.studySessionData.inputData.all_images.cond2,
+					...jatos.studySessionData.inputData.all_images.cond3,
+				]
+			}
+
+			timeline.push(preload);
+
+			///////////////////////////////////////////////////////////////////////////////////////
+			// Give a break
+			var take_a_break = {
+				type: 'instructions',
+				pages: [
+					'<div class= "header">' +
+					'<h1>Break</h1>' +
+					'</div>' +
+					'<div class="instruct">' +
+					'<p>Please take a break (max 2 minutes!). Once you are ready please continue.</p>' +
+					'</div>',
+				],
+				show_clickable_nav: true,
+				button_label_next: '<span style="color: black"d;> <strong> Next </stong></span>',
+				data: { test_part: 'take_a_break' }
+			};
+
+
+
+			// If its not just after the practice rounds, then give a break
+			if (jatos.studySessionData.inputData.curr_block > 1 & curr_block != jatos.studySessionData.inputData.all_blocks.length) {
+
+				timeline.push(take_a_break)
+
+			}
+
+			// Now show appropriate instructions or a transition
+			if (curr_block == jatos.studySessionData.inputData.all_blocks.length) {
+
+				instructions_text = 'Thank you! You have finished the experiment. Please complete a short debriefing.'
+
+				comp_to_start = jatos.studySessionData.inputData.component_positions.debriefing
+				ask_questions = false
+
+				page_title = 'Debriefing:'
+
+				test_part = 'starting_debriefing'
+
+			} else {
+
+				if (previous_condition != next_condition) {
+					// So we're changing the board
+
+					instructions_text = '<p>You will now have to find locations of hidden pictures on a new ' + jatos.studySessionData.inputData.all_blocks[curr_block][0].color_name + ' board that you can see below:</p>' +
+						grid_border.innerHTML
+
+					instructions_text += '<p><br>These will be the 6 hidden pictures you will have to find:</p>' +
+						flex_hidden_pics_el.innerHTML +
+						'<p>You will do ' + jatos.studySessionData.inputData.n_blocks_per_condition.schema_pa.schema_c + ' blocks, each block with ' + (jatos.studySessionData.inputData.n_trials_per_pa.schema_pa.schema_c * 6) + ' trials (' + jatos.studySessionData.inputData.n_trials_per_pa.schema_pa.schema_c + ' trials per hidden picture). <br><br>' +
+						'Before you start, please write down the names of the objects in the pictures above. If you do not know the name, take a guess. <br><br> Then, click "Continue" to begin!'
+
+					page_title = 'Starting a new board:'
+
+					test_part = 'instructions_new_condition'
+
+				} else if (curr_trial.stage == 'schema_pa') {
+
+					// So we're moving to the next block of schema-pa learning
+					instructions_text = '<p>You will continue learning the locations of the same images on this ' + jatos.studySessionData.inputData.condition_color_names[previous_condition] + ' board.</p>'
+
+					page_title = 'Next block'
+
+					ask_questions = false
+
+					test_part = 'in_between_blocks'
+
+				} else if (curr_trial.stage == 'new_pa') {
+
+					// So we're moving to another stage on the same board.
+					instructions_text = '<p>Great job! You have learned locations of the first 6 pictures on this board.</p>' +
+						'<p>You will now have to find locations of additional different 6 pictures on this same ' + jatos.studySessionData.inputData.all_blocks[curr_block][0].color_name + ' board:</p>' +
+						grid_border.innerHTML
+
+					instructions_text += '<p><br>These will be the 6 new hidden pictures you will have to find:</p>' +
+						flex_hidden_pics_el.innerHTML +
+						'<p><b>Importantly, the previous 6 hidden pictures are still there on this board, but will not be shown.</b></p>' +
+						'<br><p>You will do ' + jatos.studySessionData.inputData.n_blocks_per_condition.new_pa.schema_c + ' block with ' + (jatos.studySessionData.inputData.n_trials_per_pa.new_pa.schema_c * 6) + ' trials (' + jatos.studySessionData.inputData.n_trials_per_pa.new_pa.schema_c + ' trials per hidden picture). <br><br>' +
+						'Before you start, please write down the names of the objects in the pictures above. If you do not know the name, take a guess. <br><br> Then, click "Continue" to begin!'
+
+					page_title = '6 new hidden pictures!'
+
+					test_part = 'in_between_learning_conditions'
+
+				}
+
+				comp_to_start = jatos.studySessionData.inputData.component_positions.block_pa
+
+			}
+
+			// What questions to ask:
+			var questions_to_ask = []
+
+			questions_to_ask.push({ prompt: 'Write the names of the hidden pictures:', rows: 6, columns: 50, required: true })
+
+			if (ask_questions) {
+
+
+				var instructions = {
+					type: 'survey-text',
+					questions: questions_to_ask,
+					preamble: '<div class= "header">' +
+						'<h1> ' + page_title + ' </h1>' +
+						'</div>' +
+						'<div class="instruct">' +
+						'<p>' + instructions_text + '</p>' +
+						'</div>',
+					button_label_next: '<span style="color: black"d;> <strong> Next </stong></span>',
+					data: { test_part: test_part }
+				};
+			} else {
+
+				var instructions = {
+				type: 'instructions',
+				pages: [
+				'<div class= "header">' +
+						'<h1> ' + page_title + ' </h1>' +
+						'</div>' +
+						'<div class="instruct">' +
+						'<p>' + instructions_text + '</p>' +
+						'</div>',
+				],
+				show_clickable_nav: true,
+				button_label_next: '<span style="color: black"d;> <strong> Next </stong></span>',
+				data: { test_part: test_part}
+			};
+
+			}
+
+			timeline.push(instructions);
+
+			jsPsych.init({
+
+				timeline: timeline,
+
+				on_finish: function (data) {
+					// debugger
+					// Save results
+					var results = jsPsych.data.get().values()
+
+					jatos.studySessionData.outputData.transition_results.any_issues.push(results.filter(item => item.test_part == 'any_issues'))
+
+					jatos.studySessionData.outputData.transition_results.instructions_new_condition.push(results.filter(item => item.test_part == 'instructions_new_condition'))
+
+					if (jatos.studySessionData.inputData.curr_block > 1) {
+
+						jatos.studySessionData.outputData.transition_results.take_a_break.push(results.filter(item => item.test_part == 'take_a_break'))
+						jatos.studySessionData.outputData.transition_results.in_between_blocks.push(results.filter(item => item.test_part == 'in_between_blocks'))
+						jatos.studySessionData.outputData.transition_results.in_between_learning_conditions.push(results.filter(item => item.test_part == 'in_between_learning_conditions'))					
+
+					}
+
+					if (results.some(item => item.test_part == 'starting_debriefing')){
+						jatos.studySessionData.outputData.transition_results.starting_debriefing.push(results.filter(item => item.test_part == 'starting_debriefing'))
+					}
+
+					// Make JATOS remember that this block was run
+					jatos.studySessionData.latestFinishedComponentId = jatos.componentId;
+					jatos.studySessionData.latestFinishedComponentPos = jatos.componentPos;
+					jatos.studySessionData.latestFinishedComponentTitle = jatos.componentProperties.title;
+
+					jatos.submitResultData('[transition_start_' + '---' +
+						JSON.stringify(jatos.studySessionData.outputData.transition_results) +
+						'---' + '_transition_end]',
+						function () { jatos.startComponentByPos(comp_to_start) });
+
+					// jsPsych.data.displayData();
+				}
+			});
+
+		});
+
+
+	</script>
+</body>
+
+</html>

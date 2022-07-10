@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Determine condition</title>
+    <script src='jatos.js'></script>
+    <script src='./jspsych-6.3.1/jspsych.js'></script>
+    <script src='./extra_functions/lodash.js'></script>
+    <script src='./extra_functions/trial_creator.js'></script>
+    <script src='./extra_functions/jquery-3.4.1.js' type='text/javascript'></script>
+    <script src="./jspsych-6.3.1/plugins/jspsych-serial-reaction-time-mouse.js"></script>
+    <script src='./jspsych-6.3.1/plugins/jspsych-instructions.js'></script>
+    <script src='./jspsych-6.3.1/plugins/jspsych-html-slider-response.js'></script>
+    <script src='./jspsych-6.3.1/plugins/jspsych-survey-multi-choice.js'></script>
+    <script src="./extra_functions/board_creator.js"></script>
+    <link href='./jspsych-6.3.1/css/jspsych.css' rel='stylesheet' type='text/css'>
+    </link>
+    <link href='./extra_files/schema_online.css' rel='stylesheet' type='text/css'>
+    <script src='./extra_files/pa_arrangements.js'></script>
+    </link>
+</head>
+
+<body></body>
+<script>
+
+    jatos.onLoad(function () {
+
+        // debugger
+
+        // Define all the conditions here ///////////////////////////////////////////////////////////
+        var timeline = []
+
+        jatos.studySessionData.batchSessionUpdated = []
+        var counterbalancing_chosen = []
+        var order_of_conditions = []
+        var images_to_conditions = {}
+
+        jatos.studySessionData.outputData = {
+            block_results: [],
+            transition_results: {
+                any_issues: [],
+                take_a_break: [],
+                instructions_new_condition: [],
+                in_between_blocks: [],
+                starting_debriefing: [],
+                in_between_learning_conditions: []
+            },
+            instructions_results: {
+                instructions_1: [],
+                instructions_2: [],
+                post_practice: []
+            }
+        }
+
+        jatos.studySessionData.inputData = {
+            post_trial_gap: 500,
+            curr_block: 0,
+            component_positions: {
+                consent: 2,
+                browser_checks: 3,
+                determine_condition: 4,
+                instructions_1: 5,
+                instructions_2: 6,
+                post_practice: 7,
+                block_pa: 8,
+                transition: 9,
+                debriefing: 10,
+                data_submission: 11
+            },
+            n_rows: 12,
+            n_cols: 12,
+            condition_colors: {
+                practice: '#40E0D0',
+                practice2: 'rgb(219,112,147)',
+                schema_c: 'rgb(0, 100, 255)',
+                schema_ic: '#228B22',
+                schema_l: '#B22222',
+                random_loc: '#DAA520',
+                no_schema: 'rgb(138, 43, 226)',
+            },
+            condition_color_names: {
+                practice: 'cyan',
+                practice2: 'pink',
+                schema_c: 'blue',
+                schema_ic: 'green',
+                schema_l: 'red',
+                random_loc: 'yellow',
+                no_schema: 'purple',
+            },
+            condition_block_counters: {
+                schema_pa: {
+                    practice: 0,
+                    schema_c: 0,
+                    schema_ic: 0,
+                    random_loc: 0
+                },
+                new_pa: {
+                    practice: 0,
+                    schema_c: 0,
+                    schema_ic: 0,
+                    random_loc: 0
+                }                
+            },
+        }
+
+        // Record all the arrangements
+        jatos.studySessionData.inputData.pa_arrangements = pa_arrangements
+
+        jatos.studySessionData.inputData.all_images = {
+            practice: ['img/targets/BOSS/high_familiarity_downsized/practice/002_frenchfries.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/practice/003_toilet.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/practice/004_candycane01a.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/practice/005_desktopcomputer.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/practice/006_fridge.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/practice/007_key07.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/practice/008_mug05.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/practice/009_oven.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/practice/010_exitsign.jpg'],
+            cond1: ['img/targets/BOSS/high_familiarity_downsized/cond1/022_cupcake.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/024_escalator.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/026_waterfountain02.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/027_bed.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/029_basketball01.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/031_electricoutlet.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/033_macaroni01.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/035_showerhead01.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/036_table01.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/046_redonion.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/052_steeringwheel.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond1/054_bookshelf.jpg'],
+            cond2: ['img/targets/BOSS/high_familiarity_downsized/cond2/030_bathtub.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/032_flipflop01b.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/037_doorhandle.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/038_aceofdiamond.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/041_carsidemirror01.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/042_curtain.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/043_foldingchair.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/047_saltshaker03a.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/048_schoolbus.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/051_worldmap.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/053_television.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond2/057_donut.jpg'],
+            cond3: ['img/targets/BOSS/high_familiarity_downsized/cond3/025_sink.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/058_englishcucumber.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/062_picnictable.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/064_trafficlight.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/095_pintofbeer.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/065_cherrytomato01.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/066_atm.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/067_christmastree.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/068_cow.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/069_drumset.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/071_fluorescentlightbulb.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/096_rockingchair.jpg'],
+            cond4: ['img/targets/BOSS/high_familiarity_downsized/cond4/072_gift01.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/073_jackolantern.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/075_kiwi03.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/077_payphone.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/079_rose.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/081_shovel01.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/082_tortillachip.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/083_travelmug.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/097_squirrel.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/103_bikewheel.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond3/056_cloud.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond4/104_honeybee.jpg'],
+            cond5: ['img/targets/BOSS/high_familiarity_downsized/cond5/080_shoppingcart.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/099_tree.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/084_foosballtable.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/086_bus.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/091_icecube02.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/092_ladybug03.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/093_microwave.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/102_rubikcube.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/112_treadmill.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/113_pooltable.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/115_beerbottle.jpg',
+                'img/targets/BOSS/high_familiarity_downsized/cond5/122_hose.jpg']
+        }
+
+        // Add the page about counterbalancing conditions
+        var counterbalancing_options = ['cb1', 'cb2', 'cb3', 'cb4', 'cb5', 'cb6'];
+
+        var condition_choice_page = {
+            type: 'survey-multi-choice',
+            questions: [
+                { prompt: "Please choose", name: 'condition', options: counterbalancing_options, required: true },
+            ],
+        };
+
+        let autoConditions = jatos.componentJsonInput.autoConditions
+        let debugMode = jatos.componentJsonInput.debugMode
+        jatos.studySessionData.inputData.debugMode = debugMode
+
+        // Auto respons? So the program will automatically respond on each trial 
+        jatos.studySessionData.inputData.autoRespond = jatos.componentJsonInput.autoRespond
+
+        if (debugMode) {
+
+            jatos.studySessionData.inputData.n_blocks_per_condition = {
+                schema_pa: {
+                    practice: 1,
+                    schema_c: 2,
+                    schema_ic: 2,
+                    random_loc: 2,
+                },
+                new_pa: {
+                    practice: 0,
+                    schema_c: 1,
+                    schema_ic: 1,
+                    random_loc: 1,
+                }
+            }
+
+            jatos.studySessionData.inputData.n_trials_per_pa = {
+
+                schema_pa: {
+                    practice: 2,
+                    schema_c: 4,
+                    schema_ic: 4,
+                    random_loc: 4,
+                },
+
+                new_pa: {
+                    practice: 0,
+                    schema_c: 4,
+                    schema_ic: 4,
+                    random_loc: 4,
+                }
+
+            }
+
+            jatos.studySessionData.inputData.response_window_duration = 10
+            jatos.studySessionData.inputData.feedback_duration = 10
+            jatos.studySessionData.inputData.iti_duration = 0
+
+            jatos.studySessionData.inputData.show_schema_pa_at_feedback_page = false
+            jatos.studySessionData.inputData.hide_mouse = true
+
+            // How long to show the prompt image
+            jatos.studySessionData.inputData.image_pres_duration = 10
+
+            // Also manually choose counterbalancing
+            timeline.push(condition_choice_page)
+
+            // Change the post trial gap
+            jatos.studySessionData.inputData.post_trial_gap = 10
+
+        } else {
+
+            jatos.studySessionData.inputData.n_blocks_per_condition = {
+                schema_pa: {
+                    practice: 1,
+                    schema_c: 2,
+                    schema_ic: 2,
+                    random_loc: 2,
+                },
+                new_pa: {
+                    practice: 0,
+                    schema_c: 1,
+                    schema_ic: 1,
+                    random_loc: 1,
+                }
+            }
+
+            jatos.studySessionData.inputData.n_trials_per_pa = {
+
+                schema_pa: {
+                    practice: 2,
+                    schema_c: 4,
+                    schema_ic: 4,
+                    random_loc: 4,
+                },
+
+                new_pa: {
+                    practice: 0,
+                    schema_c: 4,
+                    schema_ic: 4,
+                    random_loc: 4,
+                }
+
+            }
+
+            jatos.studySessionData.inputData.response_window_duration = 3000
+            jatos.studySessionData.inputData.feedback_duration = 2000
+            jatos.studySessionData.inputData.iti_duration = 0
+
+            jatos.studySessionData.inputData.show_schema_pa_at_feedback_page = false
+            jatos.studySessionData.inputData.hide_mouse = true
+
+            // How long to show the prompt image
+            jatos.studySessionData.inputData.image_pres_duration = 500
+
+        }
+
+        if (autoConditions) {
+
+            // So get the batch info, find the smallest group, and choose that
+            let batchData = jatos.batchSession.getAll();
+
+            // Find smallest
+            var minCond = batchData.counterbalancing.indexOf(Math.min(...batchData.counterbalancing))
+
+            // Update it.
+            batchData.counterbalancing[minCond]++
+
+            // Set the batch data
+            jatos.batchSession.setAll(batchData)
+
+            counterbalancing_chosen = 'cb' + (minCond + 1)
+
+            // Record which counterbalancing condition was chosen
+            jatos.studySessionData.inputData.counterbalancing = counterbalancing_chosen
+
+            createConditions();
+
+            // Create the trials
+            jatos.studySessionData.inputData.all_blocks = trial_creator()
+            // debugger
+            // Make JATOS remember that this block was run
+            jatos.studySessionData.latestFinishedComponentId = jatos.componentId;
+            jatos.studySessionData.latestFinishedComponentPos = jatos.componentPos;
+            jatos.studySessionData.latestFinishedComponentTitle = jatos.componentProperties.title;
+
+            jatos.submitResultData("[conditions_start---" +
+                JSON.stringify(jatos.studySessionData.inputData) + "---conditions_end]",
+                function () {
+                    jatos.startComponentByPos(
+                        jatos.studySessionData.inputData.component_positions.instructions_1
+                    )
+                });
+
+        }
+
+        function createConditions() {
+            // debugger
+            // Which counterbalancing was chosen?
+
+            order_of_conditions[0] = 'practice'
+
+            if (counterbalancing_chosen == 'cb1') {
+                order_of_conditions.push('schema_c', 'schema_ic', 'random_loc')
+            } else if (counterbalancing_chosen == 'cb2') {
+                order_of_conditions.push('schema_c', 'random_loc', 'schema_ic')
+            } else if (counterbalancing_chosen == 'cb3') {
+                order_of_conditions.push('schema_ic', 'schema_c', 'random_loc')
+            } else if (counterbalancing_chosen == 'cb4') {
+                order_of_conditions.push('schema_ic', 'random_loc', 'schema_c')
+            } else if (counterbalancing_chosen == 'cb5') {
+                order_of_conditions.push('random_loc', 'schema_c', 'schema_ic')
+            } else if (counterbalancing_chosen == 'cb6') {
+                order_of_conditions.push('random_loc', 'schema_ic', 'schema_c')
+            }
+
+            //Record this order of conditions
+            jatos.studySessionData.inputData.order_of_conditions = order_of_conditions
+
+            // Create the stimuli for each condition
+            jatos.studySessionData.inputData.images_to_conditions = {
+                practice: {
+                    schema_pa: jatos.studySessionData.inputData.all_images.practice.slice(0, 6)
+                }
+            }
+            // debugger
+            for (iCond = 1; iCond <= 3; iCond++) {
+                jatos.studySessionData.inputData.images_to_conditions[order_of_conditions[iCond]] = {
+                    schema_pa: jatos.studySessionData.inputData.all_images['cond' + (iCond + 1)].slice(0, 6),
+                    new_pa: jatos.studySessionData.inputData.all_images['cond' + (iCond + 1)].slice(6, 12)
+                }
+            }
+      
+            ////////////////////////////////////////////////////////////////////////////////
+            // A new way to assign arrangements to conditions
+            jatos.studySessionData.inputData.arrangements_to_conditions = {
+                practice: pa_arrangements.filter(item => item.arrangement == 6),
+                schema_c: pa_arrangements.filter(item => item.arrangement == order_of_conditions.indexOf('schema_c')),
+                schema_ic: pa_arrangements.filter(item => item.arrangement == order_of_conditions.indexOf('schema_ic')),
+                random_loc: pa_arrangements.filter(item => item.arrangement == order_of_conditions.indexOf('random_loc')),
+            }
+
+        } // function createConditions
+
+    }); // jatos on load
+
+</script>
+
+</html>

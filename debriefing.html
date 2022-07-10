@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+  <title>Debriefing</title>
+  <script src="jspsych-6.3.1/jspsych.js"></script>
+  <script src="jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
+  <script src='./jspsych-6.3.1/plugins/jspsych-instructions.js'></script>
+  <script src="jatos.js"></script>
+  <link rel="stylesheet" href="jspsych-6.3.1/css/jspsych.css" type="text/css">
+  </link>
+  <link rel="stylesheet" href="./extra_files/schema_online.css" type="text/css">
+  </link>
+</head>
+
+<body>
+  <script>
+
+    //start timeline
+    jatos.onLoad(function () {
+
+      var timeline = []
+
+      var comp_to_start = jatos.studySessionData.inputData.component_positions.data_submission
+
+      // debugger
+      var general_questions_page = {
+        type: 'survey-text',
+        questions: [
+          { prompt: 'Did you take any pictures, make any drawings, or any written notes to help you remember locations of pictures in our experiment? <br> Note that you will get paid either way! We just want to know what strategies people use.', rows: 4, columns: 100, required: true },
+          { prompt: 'Were the instructions clear for all stages of the experiment? If not, how could we clarify them?', rows: 4, columns: 100, required: true },
+          { prompt: 'On the ' + jatos.studySessionData.inputData.condition_color_names.schema_ic + ' board, when learning the 1st set of 6 pictures, did you notice that between blocks 1 and 2 the pictures swapped locations with each other?', rows: 4, columns: 100, required: true },
+          { prompt: 'On this same ' + jatos.studySessionData.inputData.condition_color_names.schema_ic + ' board, when learning the 2nd set of 6 pictures in block 3, did the knowledge of locations of the 1st set of 6 pictures have any influence?', rows: 4, columns: 100, required: true },
+          { prompt: 'On the ' + jatos.studySessionData.inputData.condition_color_names.random_loc + ' board, when learning the 1st set of 6 pictures, did you notice that between blocks 1 and 2 all the pictures randomly moved to a different location on the board?', rows: 4, columns: 100, required: true },
+          { prompt: 'On this same ' + jatos.studySessionData.inputData.condition_color_names.random_loc + ' board, when learning the 2nd set of 6 pictures in block 3, did the knowledge of locations of the 1st set of 6 pictures have any influence?', rows: 4, columns: 100, required: true },
+          { prompt: 'When learning the location of the 1st or the 2nd set of 6 pictures, did you have any strategy? Did that differ for different boards?', rows: 4, columns: 100, required: true },
+          { prompt: 'Any other feedback on how we could improve the experiment?', rows: 4, columns: 100, required: true }
+        ],
+        button_label: 'Continue to submit your data',
+        preamble: '<p style="font-size: 30px;"><b><br>Please answer the following questions:</b></p>',
+        data: { test_part: 'debriefing' },
+      };
+
+      var debriefing_finished_generic_page = {
+        type: 'survey-text',
+        questions: [
+          { prompt: '<b>(optional) Having read the explanation of our study, do you have any thoughts you would like to share?</b>', rows: 4, columns: 50, required: false}
+        ],
+        button_label: 'Finish Experiment',
+        preamble: [
+          '<div class="instruct">' +
+          '<p><br> <strong> Click the "Finish Experiment" button at the bottom of this page, to submit your data and be redirected to Prolific! </strong></p> ' +
+
+          '<p><br>Below, you can briefly read what the experiment was about and find my contact information' +
+          ' in case you have further questions. </p>' +
+
+          '<p><br> On each of the 3 boards, you had to find locations of the hidden pictures. We are studying what factors improve or worsen this learning process, in the hopes that we can get some general insights into how learning of new information happens in other contexts too.</p>' +
+          '<p><br>On some of these boards, the 1st set of 6 pictures remained stable from block 1 to block 2 of learning. We hypothesize that people can use their knowledge of the location of these 6 pictures as "landmarks" or "anchors" in learning the locations of the 2nd set of 6 picutres in block 3. On other boards, sometimes the 1st set of 6 pictures either swapped locations with each other from block 1 to block 2, or moved randomly to a new location on the board.</p>' +
+          '<br><p>We think that the more "stable" your knowledge of the locations of the 1st set of 6 pictures, the easier it should be to learn the locations of the 2nd set of pictures. Thus, we expect you would do best on the ' + jatos.studySessionData.inputData.condition_color_names.schema_c + ' board, worst on the ' + jatos.studySessionData.inputData.condition_color_names.random_loc + ' board, and in-between on the ' + jatos.studySessionData.inputData.condition_color_names.schema_ic + ' board.</p>' +
+
+          '<p><br>Thank you once again for completing the experiment and contributing to science!</p>' +
+          '<p>If you have any questions about the experiment, please do not hesitate to contact me at levan.bokeria@mrc-cbu.cam.ac.uk </p>' +
+          '</div>'
+        ],
+        data: { test_part: 'debriefing' }
+
+      }
+
+    timeline.push(general_questions_page);
+    timeline.push(debriefing_finished_generic_page);
+
+    jsPsych.init({
+
+      timeline: timeline,
+
+      on_finish: function (data) {
+
+        // Make JATOS remember that this block was run
+        jatos.studySessionData.latestFinishedComponentId = jatos.componentId;
+        jatos.studySessionData.latestFinishedComponentPos = jatos.componentPos;
+        jatos.studySessionData.latestFinishedComponentTitle = jatos.componentProperties.title;
+
+        jatos.studySessionData.outputData.debriefing = jsPsych.data.get().values()
+
+        jatos.submitResultData('[debriefing_start_' + '---' +
+          JSON.stringify(jatos.studySessionData.outputData.debriefing) +
+          '---' + '_debriefing_end]',
+          function () { jatos.startComponentByPos(comp_to_start) });
+
+        // jsPsych.data.displayData();
+      }
+    });
+
+    });
+
+
+  </script>
+</body>
+
+</html>
