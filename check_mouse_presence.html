@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+	<title>Transition</title>
+	<script src="jspsych-6.3.1/jspsych.js"></script>
+	<script src='./jspsych-6.3.1/plugins/jspsych-html-button-response.js'></script>
+	<script src="jatos.js"></script>
+	<link rel="stylesheet" href="jspsych-6.3.1/css/jspsych.css" type="text/css">
+	</link>
+	<link rel="stylesheet" href="./extra_files/schema_online.css" type="text/css">
+	</link>
+</head>
+
+<body>
+	<script>
+
+		//start timeline
+		jatos.onLoad(function () {
+
+            var timeline = []
+
+            var instructions_text = '<p>It is really important that you complete this experiment <b>using a physical mouse and NOT a laptop touchpad</b>.<br><br>Please only continue if you have a mouse OR connect a mouse now without closing this window. <br><br>Otherwise, please just close this window and "return" the submission</p>'
+
+            var instructions = {
+				type: 'html-button-response',
+				stimulus: instructions_text,
+				choices: ['I am using a mouse'],
+				data: { test_part: 'using_a_mouse' }
+			};
+
+            timeline.push(instructions);
+
+			jsPsych.init({
+
+				timeline: timeline,
+
+				on_finish: function (data) {
+					// debugger
+
+					// Make JATOS remember that this block was run
+					jatos.studySessionData.latestFinishedComponentId    = jatos.componentId;
+					jatos.studySessionData.latestFinishedComponentPos   = jatos.componentPos;
+					jatos.studySessionData.latestFinishedComponentTitle = jatos.componentProperties.title;
+
+					jatos.startNextComponent();
+
+					// jsPsych.data.displayData();
+				}
+			});
+
+		});
+
+
+	</script>
+</body>
+
+</html>
