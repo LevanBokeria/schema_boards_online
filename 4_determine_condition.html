@@ -89,7 +89,7 @@
             },
             condition_block_counters: {
                 schema_pa: {
-                    practice: 0,
+                    practice: 1,
                     schema_c: 0,
                     schema_ic: 0,
                     random_loc: 0
@@ -190,7 +190,10 @@
 
         let autoConditions = jatos.componentJsonInput.autoConditions
         let debugMode = jatos.componentJsonInput.debugMode
+
         jatos.studySessionData.inputData.debugMode = debugMode
+
+        jatos.studySessionData.inputData.flyThroughPractice = jatos.componentJsonInput.flyThroughPractice
 
         // Auto respons? So the program will automatically respond on each trial 
         jatos.studySessionData.inputData.autoRespond = jatos.componentJsonInput.autoRespond

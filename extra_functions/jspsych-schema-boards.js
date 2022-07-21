@@ -64,6 +64,12 @@ jsPsych.plugins["schema_boards"] = (function () {
         default: null,
         description: 'The maximum duration to wait for a response or untill moving on.'
       },
+      feedback_duration: {
+        type: jsPsych.plugins.parameterType.INT,
+        pretty_name: 'Duration of feedback',
+        default: null,
+        description: 'Duration of feedback'
+      },      
       trial_counter: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Trial counter',
@@ -183,7 +189,7 @@ jsPsych.plugins["schema_boards"] = (function () {
     }
 
     function doFeedback(correct, timeout) {
-      debugger
+      // debugger
       // Remove all the event listeners from all the cells.
       document.querySelectorAll('.cells').forEach(function (el) {
         el.removeEventListener('click', getResponse, false)
@@ -234,7 +240,7 @@ jsPsych.plugins["schema_boards"] = (function () {
         jsPsych.pluginAPI.setTimeout(function () {
           endTrial();
         },
-          jatos.studySessionData.inputData.feedback_duration);
+          trial.feedback_duration);
       } else {
         endTrial();
       }
