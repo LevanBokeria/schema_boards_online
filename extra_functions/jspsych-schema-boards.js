@@ -183,7 +183,7 @@ jsPsych.plugins["schema_boards"] = (function () {
     }
 
     function doFeedback(correct, timeout) {
-
+      debugger
       // Remove all the event listeners from all the cells.
       document.querySelectorAll('.cells').forEach(function (el) {
         el.removeEventListener('click', getResponse, false)
@@ -214,8 +214,8 @@ jsPsych.plugins["schema_boards"] = (function () {
         document.querySelector('#schema_pa_' + (curr_trial.pa_img_idx + 1)).style.visibility = 'visible'
         document.querySelector('#schema_pa_' + (curr_trial.pa_img_idx + 1)).parentElement.style.opacity = 1
       } else {
-        document.querySelector('#new_pa_' + (curr_trial.pa_img_idx + 1)).style.visibility = 'visible'
-        document.querySelector('#new_pa_' + (curr_trial.pa_img_idx + 1)).parentElement.style.opacity = 1
+        document.querySelector('#' + curr_trial.pa_type + '_' + (curr_trial.pa_img_idx + 1)).style.visibility = 'visible'
+        document.querySelector('#' + curr_trial.pa_type + '_' + (curr_trial.pa_img_idx + 1)).parentElement.style.opacity = 1
       }
 
       // If wanted, also show the schema PAs

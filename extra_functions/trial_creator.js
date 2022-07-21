@@ -45,9 +45,6 @@ function trial_creator() {
 
                 var block_trials = []
 
-                // What are the PAs for this stage?
-                var relevant_pas = jatos.studySessionData.inputData.arrangements_to_conditions[iCond].filter(item => item.learning_stage == i_stage & item.block == iBlock)
-
                 for (iPA = 0; iPA < i_imgs_to_conditions[i_stage].length; iPA++) {
 
                     //console.log('PA: ',iPA)
@@ -88,7 +85,7 @@ function trial_creator() {
 
                 // Now, if its the new_pa learning stage, we also need to add schema-pa trials
                 if (i_stage == 'new_pa') {
-
+                    debugger
                     for (iPA = 0; iPA < i_imgs_to_conditions['schema_pa'].length; iPA++) {
 
                         //console.log('PA: ',iPA)
@@ -134,7 +131,7 @@ function trial_creator() {
                 if (iCond == 'practice') {
                     block_trials = jsPsych.randomization.shuffle(block_trials)
                 } else if (i_stage == 'new_pa') {
-                    debugger
+                    // debugger
                     // Separately shuffle the new_pas and schema_pas so to avoid repeating the same img
                     let block_trials_new_pas = block_trials.filter(item => item.pa_type == 'new_pa')
                     let block_trials_schema_pas = block_trials.filter(item => item.pa_type == 'schema_pa')
@@ -158,7 +155,7 @@ function trial_creator() {
 
 
                     }
-                    debugger
+                    // debugger
                 } else {
 
                     // Make sure trials aren't back to back for the same image
