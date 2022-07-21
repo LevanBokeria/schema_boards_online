@@ -1,6 +1,7 @@
 var pa_arrangements = [
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 1,
@@ -11,6 +12,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 2,
@@ -21,6 +23,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 3,
@@ -31,6 +34,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 4,
@@ -41,6 +45,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 5,
@@ -51,6 +56,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 6,
@@ -61,6 +67,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 1,
@@ -71,6 +78,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 2,
@@ -81,6 +89,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 3,
@@ -91,6 +100,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 4,
@@ -101,6 +111,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 5,
@@ -111,6 +122,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 6,
@@ -121,6 +133,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 1,
@@ -131,6 +144,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 2,
@@ -141,6 +155,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 3,
@@ -151,6 +166,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 4,
@@ -161,6 +177,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 5,
@@ -171,6 +188,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 6,
@@ -181,6 +199,73 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 3
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 10,
+    "column": 3
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 7,
+    "column": 4
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 3,
+    "column": 6
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 8,
+    "column": 11
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 11,
+    "column": 10
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 1,
@@ -191,6 +276,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 2,
@@ -201,6 +287,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 3,
@@ -211,6 +298,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 4,
@@ -221,6 +309,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 5,
@@ -231,6 +320,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 6,
@@ -241,6 +331,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 1,
@@ -251,6 +342,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 2,
@@ -261,6 +353,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 3,
@@ -271,6 +364,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 4,
@@ -281,6 +375,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 5,
@@ -291,6 +386,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 6,
@@ -301,6 +397,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 1,
@@ -311,6 +408,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 2,
@@ -321,6 +419,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 3,
@@ -331,6 +430,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 4,
@@ -341,6 +441,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 5,
@@ -351,6 +452,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 6,
@@ -361,6 +463,73 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 4,
+    "column": 11
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 4,
+    "column": 2
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 8,
+    "column": 9
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 9,
+    "column": 5
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 11,
+    "column": 7
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 7
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 1,
@@ -371,6 +540,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 2,
@@ -381,6 +551,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 3,
@@ -391,6 +562,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 4,
@@ -401,6 +573,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 5,
@@ -411,6 +584,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 6,
@@ -421,6 +595,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 1,
@@ -431,6 +606,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 2,
@@ -441,6 +617,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 3,
@@ -451,6 +628,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 4,
@@ -461,6 +639,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 5,
@@ -471,6 +650,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 6,
@@ -481,6 +661,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 1,
@@ -491,6 +672,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 2,
@@ -501,6 +683,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 3,
@@ -511,6 +694,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 4,
@@ -521,6 +705,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 5,
@@ -531,6 +716,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 1,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 6,
@@ -540,7 +726,74 @@ var pa_arrangements = [
     "column": 9
   },
   {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 10,
+    "column": 3
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 11,
+    "column": 10
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 7,
+    "column": 4
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 3,
+    "column": 6
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 8,
+    "column": 11
+  },
+  {
+    "arrangement": 1,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 3
+  },
+  {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 1,
@@ -551,6 +804,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 2,
@@ -561,6 +815,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 3,
@@ -571,6 +826,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 4,
@@ -581,6 +837,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 5,
@@ -591,6 +848,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 6,
@@ -601,6 +859,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 1,
@@ -611,6 +870,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 2,
@@ -621,6 +881,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 3,
@@ -631,6 +892,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 4,
@@ -641,6 +903,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 5,
@@ -651,6 +914,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 6,
@@ -661,6 +925,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 1,
@@ -671,6 +936,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 2,
@@ -681,6 +947,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 3,
@@ -691,6 +958,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 4,
@@ -701,6 +969,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 5,
@@ -711,6 +980,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 6,
@@ -721,6 +991,73 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 9,
+    "column": 2
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 11,
+    "column": 3
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 5
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 9,
+    "column": 6
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 7,
+    "column": 10
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 4,
+    "column": 11
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 1,
@@ -731,6 +1068,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 2,
@@ -741,6 +1079,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 3,
@@ -751,6 +1090,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 4,
@@ -761,6 +1101,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 5,
@@ -771,6 +1112,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 6,
@@ -781,6 +1123,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 1,
@@ -791,6 +1134,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 2,
@@ -801,6 +1145,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 3,
@@ -811,6 +1156,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 4,
@@ -821,6 +1167,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 5,
@@ -831,6 +1178,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 6,
@@ -841,6 +1189,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 1,
@@ -851,6 +1200,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 2,
@@ -861,6 +1211,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 3,
@@ -871,6 +1222,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 4,
@@ -881,6 +1233,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 5,
@@ -891,6 +1244,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 6,
@@ -901,6 +1255,73 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 7
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 4,
+    "column": 10
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 8,
+    "column": 11
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 7,
+    "column": 2
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 4,
+    "column": 4
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 11,
+    "column": 6
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 1,
@@ -911,6 +1332,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 2,
@@ -921,6 +1343,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 3,
@@ -931,6 +1354,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 4,
@@ -941,6 +1365,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 5,
@@ -951,6 +1376,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 6,
@@ -961,6 +1387,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 1,
@@ -971,6 +1398,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 2,
@@ -981,6 +1409,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 3,
@@ -991,6 +1420,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 4,
@@ -1001,6 +1431,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 5,
@@ -1011,6 +1442,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 6,
@@ -1021,6 +1453,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 1,
@@ -1031,6 +1464,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 2,
@@ -1041,6 +1475,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 3,
@@ -1051,6 +1486,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 4,
@@ -1061,6 +1497,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 5,
@@ -1071,6 +1508,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 2,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 6,
@@ -1080,7 +1518,74 @@ var pa_arrangements = [
     "column": 8
   },
   {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 5
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 4,
+    "column": 11
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 7,
+    "column": 10
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 9,
+    "column": 2
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 9,
+    "column": 6
+  },
+  {
+    "arrangement": 2,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 11,
+    "column": 3
+  },
+  {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 1,
@@ -1091,6 +1596,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 2,
@@ -1101,6 +1607,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 3,
@@ -1111,6 +1618,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 4,
@@ -1121,6 +1629,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 5,
@@ -1131,6 +1640,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 6,
@@ -1141,6 +1651,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 1,
@@ -1151,6 +1662,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 2,
@@ -1161,6 +1673,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 3,
@@ -1171,6 +1684,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 4,
@@ -1181,6 +1695,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 5,
@@ -1191,6 +1706,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_c",
     "block": 2,
     "pa_index": 6,
@@ -1201,6 +1717,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 1,
@@ -1211,6 +1728,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 2,
@@ -1221,6 +1739,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 3,
@@ -1231,6 +1750,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 4,
@@ -1241,6 +1761,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 5,
@@ -1251,6 +1772,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_c",
     "block": 1,
     "pa_index": 6,
@@ -1261,6 +1783,73 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 3,
+    "column": 2
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 7,
+    "column": 3
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 11,
+    "column": 5
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 4,
+    "column": 6
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 10
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_c",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 10,
+    "column": 11
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 1,
@@ -1271,6 +1860,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 2,
@@ -1281,6 +1871,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 3,
@@ -1291,6 +1882,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 4,
@@ -1301,6 +1893,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 5,
@@ -1311,6 +1904,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 6,
@@ -1321,6 +1915,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 1,
@@ -1331,6 +1926,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 2,
@@ -1341,6 +1937,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 3,
@@ -1351,6 +1948,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 4,
@@ -1361,6 +1959,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 5,
@@ -1371,6 +1970,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "random_loc",
     "block": 2,
     "pa_index": 6,
@@ -1381,6 +1981,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 1,
@@ -1391,6 +1992,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 2,
@@ -1401,6 +2003,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 3,
@@ -1411,6 +2014,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 4,
@@ -1421,6 +2025,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 5,
@@ -1431,6 +2036,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "random_loc",
     "block": 1,
     "pa_index": 6,
@@ -1441,6 +2047,73 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 9,
+    "column": 10
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 4,
+    "column": 10
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 2
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 10,
+    "column": 7
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 4,
+    "column": 4
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "random_loc",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 8,
+    "column": 2
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 1,
@@ -1451,6 +2124,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 2,
@@ -1461,6 +2135,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 3,
@@ -1471,6 +2146,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 4,
@@ -1481,6 +2157,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 5,
@@ -1491,6 +2168,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 6,
@@ -1501,6 +2179,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 1,
@@ -1511,6 +2190,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 2,
@@ -1521,6 +2201,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 3,
@@ -1531,6 +2212,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 4,
@@ -1541,6 +2223,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 5,
@@ -1551,6 +2234,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "schema_pa",
     "condition": "schema_ic",
     "block": 2,
     "pa_index": 6,
@@ -1561,6 +2245,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 1,
@@ -1571,6 +2256,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 2,
@@ -1581,6 +2267,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 3,
@@ -1591,6 +2278,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 4,
@@ -1601,6 +2289,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 5,
@@ -1611,6 +2300,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 3,
+    "learning_stage": "new_pa",
     "condition": "schema_ic",
     "block": 1,
     "pa_index": 6,
@@ -1618,9 +2308,76 @@ var pa_arrangements = [
     "distance_category": "",
     "row": 2,
     "column": 8
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 1,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 7,
+    "column": 3
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 2,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 11,
+    "column": 5
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 3,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 10,
+    "column": 11
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 4,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 3,
+    "column": 3
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 5,
+    "pa_type": "schema_pa",
+    "distance_category": "near",
+    "row": 4,
+    "column": 6
+  },
+  {
+    "arrangement": 3,
+    "learning_stage": "new_pa",
+    "condition": "schema_ic",
+    "block": 1,
+    "pa_index": 6,
+    "pa_type": "schema_pa",
+    "distance_category": "",
+    "row": 2,
+    "column": 10
   },
   {
     "arrangement": 6,
+    "learning_stage": "schema_pa",
     "condition": "practice",
     "block": 1,
     "pa_index": 1,
@@ -1631,6 +2388,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 6,
+    "learning_stage": "schema_pa",
     "condition": "practice",
     "block": 1,
     "pa_index": 2,
@@ -1641,6 +2399,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 6,
+    "learning_stage": "schema_pa",
     "condition": "practice",
     "block": 1,
     "pa_index": 3,
@@ -1651,6 +2410,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 6,
+    "learning_stage": "schema_pa",
     "condition": "practice",
     "block": 1,
     "pa_index": 4,
@@ -1661,6 +2421,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 6,
+    "learning_stage": "schema_pa",
     "condition": "practice",
     "block": 1,
     "pa_index": 5,
@@ -1671,6 +2432,7 @@ var pa_arrangements = [
   },
   {
     "arrangement": 6,
+    "learning_stage": "schema_pa",
     "condition": "practice",
     "block": 1,
     "pa_index": 6,

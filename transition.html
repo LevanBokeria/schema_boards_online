@@ -156,13 +156,13 @@
 
 				if (previous_condition != next_condition) {
 					// So we're changing the board
-
+					// debugger
 					instructions_text = '<p>You will now have to find locations of hidden pictures on a new ' + jatos.studySessionData.inputData.all_blocks[curr_block][0].color_name + ' board that you can see below:</p>' +
 						grid_border.innerHTML
 
 					instructions_text += '<p><br>These will be the 6 hidden pictures you will have to find:</p>' +
 						flex_hidden_pics_el.innerHTML +
-						'<p>You will do ' + jatos.studySessionData.inputData.n_blocks_per_condition.schema_pa.schema_c + ' blocks, each block with ' + (jatos.studySessionData.inputData.n_trials_per_pa.schema_pa.schema_c * 6) + ' trials (' + jatos.studySessionData.inputData.n_trials_per_pa.schema_pa.schema_c + ' trials per hidden picture). <br><br>' +
+						'<p>You will do ' + jatos.studySessionData.inputData.n_blocks_per_condition.schema_pa.schema_c + ' blocks, each block with ' + (jatos.studySessionData.inputData.n_trials_per_pa.schema_pa.schema_pa.schema_c * 6) + ' trials (' + jatos.studySessionData.inputData.n_trials_per_pa.schema_pa.schema_pa.schema_c + ' trials per hidden picture). <br><br>' +
 						'Before you start, please write down the names of the objects in the pictures above. If you do not know the name, take a guess. <br><br> Then, click "Continue" to begin!'
 
 					page_title = 'Starting a new board:'
@@ -181,7 +181,7 @@
 					test_part = 'in_between_blocks'
 
 				} else if (curr_trial.stage == 'new_pa') {
-
+					// debugger
 					// So we're moving to another stage on the same board.
 					instructions_text = '<p>Great job! You have learned locations of the first 6 pictures on this board.</p>' +
 						'<p>You will now have to find locations of additional different 6 pictures on this same ' + jatos.studySessionData.inputData.all_blocks[curr_block][0].color_name + ' board:</p>' +
@@ -189,8 +189,8 @@
 
 					instructions_text += '<p><br>These will be the 6 new hidden pictures you will have to find:</p>' +
 						flex_hidden_pics_el.innerHTML +
-						'<p><b>Importantly, the previous 6 hidden pictures are still there on this board, but will not be shown.</b></p>' +
-						'<br><p>You will do ' + jatos.studySessionData.inputData.n_blocks_per_condition.new_pa.schema_c + ' block with ' + (jatos.studySessionData.inputData.n_trials_per_pa.new_pa.schema_c * 6) + ' trials (' + jatos.studySessionData.inputData.n_trials_per_pa.new_pa.schema_c + ' trials per hidden picture). <br><br>' +
+						'<p><b>Importantly, the previous 6 hidden pictures are still there on this board, and you will do some trials with those too.</b></p>' +
+						'<br><p>You will do ' + jatos.studySessionData.inputData.n_blocks_per_condition.new_pa.schema_c + ' block with ' + (jatos.studySessionData.inputData.all_blocks[curr_block].length) + ' trials (' + jatos.studySessionData.inputData.n_trials_per_pa.new_pa.new_pa.schema_c + ' trials for each new hidden picture and ' + jatos.studySessionData.inputData.n_trials_per_pa.new_pa.schema_pa.schema_c + ' trials per each old hidden picture). <br><br>' +
 						'Before you start, please write down the names of the objects in the pictures above. If you do not know the name, take a guess. <br><br> Then, click "Continue" to begin!'
 
 					page_title = '6 new hidden pictures!'

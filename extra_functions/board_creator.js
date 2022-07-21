@@ -5,6 +5,9 @@ function board_creator(board_size_px,
   show_new_pas,
   curr_trial) {
 
+
+  // debugger
+
   // Create the grid 
   grid_border = document.createElement('div')
   grid_border.id = 'grid_border'

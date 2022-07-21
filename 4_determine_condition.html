@@ -99,7 +99,7 @@
                     schema_c: 0,
                     schema_ic: 0,
                     random_loc: 0
-                }                
+                }
             },
         }
 
@@ -215,17 +215,30 @@
             jatos.studySessionData.inputData.n_trials_per_pa = {
 
                 schema_pa: {
-                    practice: 2,
-                    schema_c: 4,
-                    schema_ic: 4,
-                    random_loc: 4,
+
+                    schema_pa: {
+                        practice: 2,
+                        schema_c: 4,
+                        schema_ic: 4,
+                        random_loc: 4,
+                    }
                 },
 
                 new_pa: {
-                    practice: 0,
-                    schema_c: 4,
-                    schema_ic: 4,
-                    random_loc: 4,
+
+                    schema_pa: {
+                        practice: 2,
+                        schema_c: 2,
+                        schema_ic: 2,
+                        random_loc: 2,
+                    },
+
+                    new_pa: {
+                        practice: 0,
+                        schema_c: 4,
+                        schema_ic: 4,
+                        random_loc: 4,
+                    }
                 }
 
             }
@@ -266,17 +279,30 @@
             jatos.studySessionData.inputData.n_trials_per_pa = {
 
                 schema_pa: {
-                    practice: 2,
-                    schema_c: 4,
-                    schema_ic: 4,
-                    random_loc: 4,
+
+                    schema_pa: {
+                        practice: 2,
+                        schema_c: 4,
+                        schema_ic: 4,
+                        random_loc: 4,
+                    }
                 },
 
                 new_pa: {
-                    practice: 0,
-                    schema_c: 4,
-                    schema_ic: 4,
-                    random_loc: 4,
+
+                    schema_pa: {
+                        practice: 2,
+                        schema_c: 2,
+                        schema_ic: 2,
+                        random_loc: 2,
+                    },
+
+                    new_pa: {
+                        practice: 0,
+                        schema_c: 4,
+                        schema_ic: 4,
+                        random_loc: 4,
+                    }
                 }
 
             }
@@ -368,14 +394,14 @@
                     new_pa: jatos.studySessionData.inputData.all_images['cond' + (iCond + 1)].slice(6, 12)
                 }
             }
-      
+
             ////////////////////////////////////////////////////////////////////////////////
             // A new way to assign arrangements to conditions
             jatos.studySessionData.inputData.arrangements_to_conditions = {
                 practice: pa_arrangements.filter(item => item.arrangement == 6),
-                schema_c: pa_arrangements.filter(item => item.arrangement == order_of_conditions.indexOf('schema_c')),
-                schema_ic: pa_arrangements.filter(item => item.arrangement == order_of_conditions.indexOf('schema_ic')),
-                random_loc: pa_arrangements.filter(item => item.arrangement == order_of_conditions.indexOf('random_loc')),
+                schema_c: pa_arrangements.filter(item => item.condition == 'schema_c' & item.arrangement == order_of_conditions.indexOf('schema_c')),
+                schema_ic: pa_arrangements.filter(item => item.condition == 'schema_ic' & item.arrangement == order_of_conditions.indexOf('schema_ic')),
+                random_loc: pa_arrangements.filter(item => item.condition == 'random_loc' & item.arrangement == order_of_conditions.indexOf('random_loc')),
             }
 
         } // function createConditions
